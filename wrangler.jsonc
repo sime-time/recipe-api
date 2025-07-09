@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "recipe-api",
+  "main": "src/server.ts",
+  "compatibility_date": "2025-07-09",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "recipe-db",
+      "database_id": "016e2506-c079-4f46-a91e-8e33c6380b9d",
+      "migrations_dir": "./src/db/migrations"
+    }
+  ],
+  // "compatibility_flags": [
+  //   "nodejs_compat"
+  // ],
+  // // "vars": {
+  //   "MY_VAR": "my-variable"
+  // },
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "MY_KV_NAMESPACE",
+  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  //   }
+  // ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MY_BUCKET",
+  //     "bucket_name": "my-bucket"
+  //   }
+  // ],
+  // "ai": {
+  //   "binding": "AI"
+  // },
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}
