@@ -16,10 +16,14 @@ export const auth = (env: CloudflareBindings): ReturnType<typeof betterAuth> => 
       provider: "sqlite",
       schema: authSchema,
     }),
+    trustedOrigins: ["recipeapp://"],
     emailAndPassword: {
       enabled: true,
+      autoSignIn: false,
     },
-    trustedOrigins: ["recipeapp://"],
+    emailVerification: {
+      autoSignInAfterVerification: true,
+    },
     plugins: [
       expo(),
       emailOTP({
