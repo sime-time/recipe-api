@@ -1,4 +1,4 @@
-# Hono API Boilerplate for Cloudflare Workers
+# Recipe Backend API
 
 A minimal boilerplate for building APIs with [Hono](https://hono.dev/) on Cloudflare Workers, using Drizzle ORM, D1 database, and Better Auth for authentication. Example routes (e.g., favorites) are included for demonstration and can be replaced with your own.
 
@@ -21,6 +21,7 @@ A minimal boilerplate for building APIs with [Hono](https://hono.dev/) on Cloudf
    - Create a `.dev.vars` file with:
      ```
      BETTER_AUTH_SECRET=your-secret
+     RESEND_API_KEY=your-secret
      ```
 
 3. **Configure your D1 database on Cloudflare.**
