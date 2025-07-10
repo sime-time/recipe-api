@@ -19,10 +19,6 @@ export const auth = (env: CloudflareBindings): ReturnType<typeof betterAuth> => 
     trustedOrigins: ["recipeapp://"],
     emailAndPassword: {
       enabled: true,
-      autoSignIn: false,
-    },
-    emailVerification: {
-      autoSignInAfterVerification: true,
     },
     plugins: [
       expo(),
