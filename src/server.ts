@@ -9,14 +9,17 @@ const app = new Hono<{ Bindings: CloudflareBindings }>();
 // middleware
 app.use(
   '*',
-  cors({
-    origin: 'http://localhost:3000',
-    allowHeaders: ["Content-Type", "Authorization"],
-    allowMethods: ["POST", "GET", "OPTIONS"],
-    exposeHeaders: ["Content-Length"],
-    maxAge: 600,
-    credentials: true,
-  })
+  async (c, next) => {
+    const originUrl = c.env.CLIENT_ORIGIN_URL;
+    return cors({
+      origin: originUrl,
+      allowHeaders: ["Content-Type", "Authorization"],
+      allowMethods: ["POST", "GET", "OPTIONS"],
+      exposeHeaders: ["Content-Length"],
+      maxAge: 600,
+      credentials: true,
+    })(c, next); // call the cors middleware with configured options
+  },
 );
 
 // catch-all route for better-auth

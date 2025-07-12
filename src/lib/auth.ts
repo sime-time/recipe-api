@@ -16,7 +16,7 @@ export const auth = (env: CloudflareBindings): ReturnType<typeof betterAuth> => 
       provider: "sqlite",
       schema: authSchema,
     }),
-    trustedOrigins: ["recipeapp://", "http://localhost:3000"],
+    trustedOrigins: [env.CLIENT_ORIGIN_URL],
     emailAndPassword: {
       enabled: true,
     },
